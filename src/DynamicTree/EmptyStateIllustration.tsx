@@ -2,7 +2,7 @@ import { Illustration, IllustrationPropsWithoutChildren } from '@react-spectrum/
 
 export default function EmptyStateIllustration(
   props: IllustrationPropsWithoutChildren,
-): JSX.Element {
+): React.ReactElement {
   return (
     <Illustration {...props}>
       <svg height="94" width="146.569" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

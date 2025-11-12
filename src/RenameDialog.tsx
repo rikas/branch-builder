@@ -22,7 +22,7 @@ export default function RenameDialog({
   onOpenChange,
   defaultValue,
   onSubmit,
-}: Props): JSX.Element {
+}: Props): React.ReactElement {
   const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.currentTarget));

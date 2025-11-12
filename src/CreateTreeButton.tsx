@@ -1,6 +1,5 @@
 import {
   Text,
-  ActionButton,
   Button,
   ButtonGroup,
   Content,
@@ -13,41 +12,42 @@ import {
   TextField,
 } from '@adobe/react-spectrum';
 import { createFolders, openFolder } from './disk-operations';
+import { useTreeContext } from './TreeContext';
+import CreateIcon from '@spectrum-icons/workflow/FolderGear';
+import { buildSimpleTree, getRootChildren, replaceFolderNames } from './utils';
 
-type Props = {
-  data: Folder[];
-  disabled: boolean;
-};
+// This button creates the folder on disk based on a predefined structure
+export default function CreateTreeButton(): React.ReactElement {
+  const { treeData } = useTreeContext();
 
-export default function ApplyTreeButton({ data, disabled = false }: Props): JSX.Element {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>, close: () => void) => {
     event.preventDefault();
 
     const formData = Object.fromEntries(new FormData(event.currentTarget));
-    const code = formData.code as string;
-    const name = formData.name as string;
 
-    const replace = (str: string) => str.replace(/\$code/g, code).replace(/\$name/g, name);
-
-    const replaceInFolders = (folders: Folder[]): Folder[] =>
-      folders.map((folder) => ({
-        ...folder,
-        name: replace(folder.name),
-        children: replaceInFolders(folder.children),
-      }));
-
-    const newFolders = replaceInFolders(data);
+    const rootChildren = getRootChildren(treeData);
+    const simpleTree = buildSimpleTree(rootChildren);
+    const simpleTreeReplaced = replaceFolderNames({
+      folders: simpleTree,
+      code: formData.code as string,
+      name: formData.name as string,
+    });
 
     const parentFolder = await openFolder();
 
-    await createFolders(parentFolder, newFolders);
+    await createFolders(parentFolder, simpleTreeReplaced);
 
     close();
   };
 
+  const isDisabled = treeData.items.length === 0;
+
   return (
     <DialogTrigger>
-      <ActionButton isDisabled={disabled}>Create folder structure</ActionButton>
+      <Button variant="cta" isDisabled={isDisabled}>
+        <CreateIcon aria-label="Create folder" />
+        <Text>Create folder structure</Text>
+      </Button>
       {(close) => (
         <Dialog>
           <Heading>

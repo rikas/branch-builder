@@ -1,7 +1,7 @@
 {
   "name": "branch-builder",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.1.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,33 +10,28 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "@adobe/react-spectrum": "^3.37.1",
-    "@heroicons/react": "^2.1.5",
-    "@react-spectrum/icon": "^3.7.16",
-    "@react-spectrum/toast": "3.0.0-beta.16",
-    "@react-spectrum/tree": "3.0.0-beta.1",
-    "@spectrum-icons/illustrations": "^3.6.16",
-    "@spectrum-icons/workflow": "^4.2.15",
-    "@tauri-apps/api": ">=2.0.0",
-    "@tauri-apps/plugin-dialog": "~2",
-    "@tauri-apps/plugin-fs": "~2",
-    "@tauri-apps/plugin-shell": ">=2.0.0",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "react": "^18.2.0",
-    "react-arborist": "^3.4.0",
-    "react-dom": "^18.2.0",
-    "tailwind-merge": "^2.5.4",
-    "tailwind-variants": "^0.2.1",
-    "tailwindcss": "^3.4.14"
+    "@adobe/react-spectrum": "^3.45.0",
+    "@heroicons/react": "^2.2.0",
+    "@react-spectrum/icon": "^3.8.9",
+    "@react-spectrum/toast": "3.1.4",
+    "@react-spectrum/tree": "3.1.8",
+    "@react-stately/data": "^3.14.1",
+    "@react-stately/tree": "^3.9.3",
+    "@spectrum-icons/illustrations": "^3.6.26",
+    "@spectrum-icons/workflow": "^4.2.25",
+    "@tauri-apps/api": "^2.9.0",
+    "@tauri-apps/plugin-dialog": "~2.4.2",
+    "@tauri-apps/plugin-fs": "~2.4.4",
+    "@tauri-apps/plugin-shell": "^2.3.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@tauri-apps/cli": ">=2.0.0",
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.2.1",
-    "prettier-plugin-tailwindcss": "^0.6.8",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "@tauri-apps/cli": "^2.9.4",
+    "@types/react": "^19.2.4",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
   }
 }

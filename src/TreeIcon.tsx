@@ -1,7 +1,7 @@
 import { Icon } from '@adobe/react-spectrum';
 import { IconPropsWithoutChildren } from '@react-spectrum/icon';
 
-export default function TreeIcon(props?: IconPropsWithoutChildren): JSX.Element {
+export default function TreeIcon(props?: IconPropsWithoutChildren): React.ReactElement {
   return (
     <Icon {...props}>
       <svg
