@@ -63,9 +63,6 @@ export function TreeContextProvider({ children }: PropsWithChildren): React.Reac
       value={{ treeState, treeData, startNewTree, resetTreeFromFile, saveTreeToFile }}
     >
       {children}
-      <pre>
-        <small>{JSON.stringify(treeData, null, 2)}</small>
-      </pre>
     </TreeContext.Provider>
   );
 }

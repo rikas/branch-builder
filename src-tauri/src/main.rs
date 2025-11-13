@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    directory_creator_lib::run()
+    branch_builder_lib::run()
 }

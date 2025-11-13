@@ -46,7 +46,6 @@ export function DynamicTree(): React.ReactElement {
           <DynamicTreeItem id={node.value.id} name={node.value.name} items={node.children} />
         )}
       </TreeView>
-      <button onClick={handleStartNewTree}>NEW</button>
     </>
   );
 }
