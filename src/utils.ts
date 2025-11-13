@@ -36,6 +36,6 @@ export function replaceFolderNames({ folders, code, name }: ReplaceProps): Folde
   return folders.map((folder) => ({
     ...folder,
     name: replaceFolderNameVariables(folder.name, code, name),
-    childItems: replaceFolderNames({ folders: folder.children || [], code, name }),
+    children: replaceFolderNames({ folders: folder.children || [], code, name }),
   }));
 }

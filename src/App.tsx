@@ -35,14 +35,8 @@ export default function App() {
   };
 
   return (
-    <Grid
-      flex
-      height="100%"
-      areas={['header', 'content', 'footer']}
-      rows={['size-1250', 'auto', 'size-500']}
-      gap="size-0"
-    >
-      <View gridArea="header" padding="size-200">
+    <Flex height="100%" gap="size-25" direction="column">
+      <View padding="size-200">
         <Header>
           <Flex direction="column">
             <Heading level={1} height={0}>
@@ -54,7 +48,7 @@ export default function App() {
         <Divider size="M" />
       </View>
 
-      <View gridArea="content" padding="size-200" marginTop="size-200">
+      <View flexGrow={1} height="auto" padding="size-200">
         <Flex direction="column" height="100%" gap="size-200">
           <ActionGroup
             onAction={(key: Key) => handleFileAction(key as FileAction)}
@@ -71,17 +65,13 @@ export default function App() {
             </Item>
           </ActionGroup>
 
-          <View
-            maxHeight="size-3600"
-            height="size-3600"
-            overflow="auto"
-            borderWidth="thin"
-            borderColor="dark"
-          >
-            <DynamicTree />
-          </View>
+          <Flex height="100%" width="100%">
+            <View width="100%" overflow="auto" borderWidth="thin" borderColor="dark">
+              <DynamicTree />
+            </View>
+          </Flex>
 
-          <View position="absolute" bottom="size-400" left="size-0" width="100%" zIndex={2}>
+          <View position="absolute" bottom="size-0" left="size-0" width="100%" zIndex={2}>
             <TreeItemActions />
           </View>
 
@@ -91,13 +81,13 @@ export default function App() {
         </Flex>
       </View>
 
-      <View gridArea="footer" paddingStart="size-200">
+      <View gridArea="footer" paddingStart="size-200" paddingBottom="size-200">
         <Footer>
           <Flex justifyContent="start" gap="size-10">
             <Text>&copy; {new Date().getFullYear()} Ricardo Otero</Text>
           </Flex>
         </Footer>
       </View>
-    </Grid>
+    </Flex>
   );
 }

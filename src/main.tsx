@@ -8,7 +8,7 @@ import { TreeContextProvider } from './TreeContext';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider theme={defaultTheme}>
-      <Flex flexGrow={1} direction="column">
+      <Flex flexGrow={1} height="100vh" direction="column">
         <TreeContextProvider>
           <App />
         </TreeContextProvider>
