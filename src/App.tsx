@@ -8,7 +8,6 @@ import {
   Header,
   View,
   Divider,
-  Grid,
   Key,
 } from '@adobe/react-spectrum';
 import SaveFloppy from '@spectrum-icons/workflow/SaveFloppy';
@@ -65,8 +64,8 @@ export default function App() {
             </Item>
           </ActionGroup>
 
-          <Flex height="100%" width="100%">
-            <View width="100%" overflow="auto" borderWidth="thin" borderColor="dark">
+          <Flex height="100%" width="100%" minHeight={0} flexGrow={1}>
+            <View width="100%" height="100%" overflow="auto" borderWidth="thin" borderColor="dark">
               <DynamicTree />
             </View>
           </Flex>
