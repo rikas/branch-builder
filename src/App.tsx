@@ -64,11 +64,16 @@ export default function App() {
             </Item>
           </ActionGroup>
 
-          <Flex height="100%" width="100%" minHeight={0} flexGrow={1}>
-            <View width="100%" height="100%" overflow="auto" borderWidth="thin" borderColor="dark">
-              <DynamicTree />
-            </View>
-          </Flex>
+          <View
+            flexGrow={1}
+            overflow="auto"
+            height="size-1600"
+            width="100%"
+            borderWidth="thin"
+            borderColor="dark"
+          >
+            <DynamicTree />
+          </View>
 
           <View position="absolute" bottom="size-0" left="size-0" width="100%" zIndex={2}>
             <TreeItemActions />
