@@ -40,7 +40,7 @@ export default function CreateTreeButton(): React.ReactElement {
     close();
   };
 
-  const isDisabled = treeData.items.length === 1;
+  const isDisabled = getRootChildren(treeData).length === 0;
 
   return (
     <DialogTrigger>
